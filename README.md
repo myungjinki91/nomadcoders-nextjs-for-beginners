@@ -65,3 +65,11 @@ export default function Tomato() {
     "dev": "next dev"
   },
 ```
+
+# 2 [🔥 2024 UPDATE 🔥] ROUTING
+
+## 2.0 Introduction
+
+Next.js는 우리 디렉토리 구조를 읽을겁니다. 주의하실 점이 있습니다. 반드시 폴더 이름은 app이여야 합니다. 그리고 page.tsx여야 합니다. page의 Component이름은 상관 없습니다.
+
+react를 import하지 않아도 됩니다.
