@@ -126,3 +126,15 @@ npm i -D eslint@8.4.1 eslint-config-next@12.0.7
   }
 }
 ```
+
+# 6 [NEXT 12] FRAMEWORK OVERVIEW
+
+## 6.0 Library vs Framework
+
+Library는 여러분들이 Library를 사용합니다. Framework는 여러분이 작성한 코드를 Framework가 사용합니다.
+
+React.js를 사용할 때는 폴더 구조를 여러분이 정하면 됩니다. Next.js를 사용할 땐 폴더 구조를 따라야 합니다.
+
+Framework에서는 추상화되어있습니다.
+
+about.js를 만들면 자동으로 URL /about Routing이 됩니다.
