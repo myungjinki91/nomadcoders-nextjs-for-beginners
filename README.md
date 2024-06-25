@@ -405,3 +405,12 @@ export default function NavBar() {
 또 중요한 점은 global.css를 컴포넌트에서는 import할 수 없도록 막아놨습니다. 오직 \*.module.css를 사용하도록 강제합니다.
 
 그런데 \_app.js에서는 가능합니다.
+
+## 6.7 Recap
+
+- pages
+- static pre rendering
+- css module
+- styled-jsx
+  - global property
+- \_app.js
