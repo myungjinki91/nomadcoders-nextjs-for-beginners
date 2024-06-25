@@ -328,3 +328,80 @@ export default function NavBar() {
 ```
 
 장점은 className을 짓는데 머리 쓸 필요가 없다는 겁니다. 그리고 해당 Component에만 적용됩니다.
+
+## 6.6 Custom App
+
+App Component, App Page에 대해서 배워봅시다.
+
+global style을 사용하고 싶다면 `<style jsx global>`
+
+styled-jsx에서는 page별로 생각해야 합니다.
+
+`<NavBar>`를 하나하나 복사하고 싶지도 않고, `<style jsx global>`을 하나하나 복사하고 싶지도 않습니다.
+
+그럴 때 필요한 것은 `_app.js`입니다.
+
+index.js를 렌더링 하기 전에 \_app.js를 먼저 봅니다.
+
+about.js를 렌더링 하기 전에 \_app.js를 먼저 봅니다.
+
+\_app.js는 이렇게 생겼습니다.
+
+- pages/\_app.js
+
+```jsx
+export default function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+```
+
+이걸 수정하는겁니다.
+
+- pages/\_app.js
+
+```jsx
+import NavBar from "../components/NavBar";
+import "../styles/globals.css";
+
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <NavBar />
+      <Component {...pageProps} />
+    </>
+  );
+}
+```
+
+- components/NavBar.js
+
+```jsx
+import Link from "next/link";
+import { useRouter } from "next/router";
+
+export default function NavBar() {
+  const router = useRouter();
+  return (
+    <nav>
+      <Link href="/">
+        <a className={router.pathname === "/" ? "active" : ""}>Home</a>
+      </Link>
+      <Link href="/about">
+        <a className={router.pathname === "/about" ? "active" : ""}>About</a>
+      </Link>
+      <style jsx>{`
+        a {
+          text-decoration: none;
+        }
+        .active {
+          color: tomato;
+        }
+      `}</style>
+    </nav>
+  );
+}
+```
+
+또 중요한 점은 global.css를 컴포넌트에서는 import할 수 없도록 막아놨습니다. 오직 \*.module.css를 사용하도록 강제합니다.
+
+그런데 \_app.js에서는 가능합니다.
