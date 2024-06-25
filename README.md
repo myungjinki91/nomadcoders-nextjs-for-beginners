@@ -78,6 +78,38 @@ react를 import하지 않아도 됩니다.
 
 page.tsx가 있어야 rendering합니다. 없으면 URL이 동작하지 않습니다. app안에 components 폴더를 만들기도 하고, 공식 홈페이지에서 그렇게 알려주기도 하며, 많은 사람들이 그렇게 사용하지만 저는 그러진 않습니다.
 
+## 2.2 Not Found Routes
+
+app/not-found.tsx는 not-found page를 설정할 수 있습니다.
+
+<Link>를 사용해봅시다.
+
+usePathname()이란 것도 있습니다. 파일 첫 줄에 “use client”를 작성해야 합니다.
+
+```tsx
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+export default function Navigation() {
+  const path = usePathname();
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link href="/">Home</Link> {path === "/" ? "🔥" : ""}
+        </li>
+        <li>
+          <Link href="/about-us">About Us</Link>{" "}
+          {path === "/about-us" ? "🔥" : ""}
+        </li>
+      </ul>
+    </nav>
+  );
+}
+```
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome

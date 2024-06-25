@@ -1,3 +1,10 @@
+import Navigation from "../../components/navigation";
+
 export default function Company() {
-  return <h1>Company</h1>;
+  return (
+    <div>
+      <Navigation />
+      <h1>About us</h1>
+    </div>
+  );
 }
