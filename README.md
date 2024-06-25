@@ -193,6 +193,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
 Layout은 덮어씌워지지 않고, 중첩됩니다!
 
+## 2.8 Metadata
+
+Route group을 사용하려면 디렉토리 이름을 ()로 묶어줍니다.
+
+메타데이터는 중첩되지 않고 병합됩니다…?
+
+페이지나 레이아웃만 메타데이터를 내보낼 수 있고, 컴포넌트는 할 수 없습니다.
+
+메타데이터는 서버 컴포넌트에만 있습니다. 클라이언트 컴포넌트에는 없습니다.
+
+메타데이터가 동적일 수도 있습니다
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
