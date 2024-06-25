@@ -110,6 +110,18 @@ export default function Navigation() {
 }
 ```
 
+## 2.3 SSR vs CSR
+
+React.js는 Client Side에서 Rendering합니다. HTML에 아무것도 없습니다.
+
+그래서 React가 준비된 뒤에 렌더링이 진행됩니다. 그래서 시간이 걸립니다.
+
+검색엔진은 HTML을 보고 SEO를 합니다.
+
+Next.js로 만든 프로그램은 HTML에 내용이 있습니다.
+
+모든~~~ component는 서버에서 렌더링 됩니다. “use client”라고 선언한 컴포넌트도 먼저 백엔드에서 렌더링됩니다.
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
