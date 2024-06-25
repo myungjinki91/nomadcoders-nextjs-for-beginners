@@ -414,3 +414,9 @@ export default function NavBar() {
 - styled-jsx
   - global property
 - \_app.js
+
+# 7 [NEXT 12] PRACTICE PROJECT
+
+## 7.0 Patterns
+
+사람들이 엄청 자주 사용하는 패턴을 봅시다. layout pattern입니다!
