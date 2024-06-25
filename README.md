@@ -77,3 +77,52 @@ react를 import하지 않아도 됩니다.
 ## 2.1 Defining Routes
 
 page.tsx가 있어야 rendering합니다. 없으면 URL이 동작하지 않습니다. app안에 components 폴더를 만들기도 하고, 공식 홈페이지에서 그렇게 알려주기도 하며, 많은 사람들이 그렇게 사용하지만 저는 그러진 않습니다.
+
+# 5 [NEXT 12] INTRODUCTION
+
+## 5.1 Welcome
+
+Next.js는 가장 좋아하고 이 사이트 또한 Next.js로 만들어졌습니다.
+
+시간 절약하고, 왜 많은 기업들이 Next.js를 선택하는지 알 수 있습니다.
+
+Tictok, Twitch, Github copilot, Binance, Marvel, Expo, Ferrari, Framer등 많은 회사들이 도입했습니다.
+
+## 5.2 Requirements
+
+React.js의 state, props, routing, render에 대해 알고 있어야 합니다.
+
+기본만 알고 있으면 됩니다.
+
+## 5.3 Creating a Project
+
+아래 코드 다운로드
+
+https://github.com/nomadcoders/nextjs-fundamentals/commit/7ca6414b11a21643dcd17f356d7f8069ade71c6d
+
+```bash
+npm i react@17.0.2 react-dom@17.0.2 next@12.0.7
+npm i -D eslint@8.4.1 eslint-config-next@12.0.7
+```
+
+```json
+{
+  "name": "nextjs-intro",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "12.0.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "8.4.1",
+    "eslint-config-next": "12.0.7"
+  }
+}
+```
