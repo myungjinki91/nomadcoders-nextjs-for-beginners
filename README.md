@@ -144,6 +144,10 @@ backend render fronted hydrated 합니다.
 
 Server Side Rendering은 Data Fetching에 엄청난 강점을 가집니다.
 
+## 2.6 Recap
+
+“use client”를 사용하면 해당 파일에 있는 컴포넌트는 모두 client component입니다. client component가 있는 파일에서는 server component를 import할 수는 없지만 props로 전달받을 수는 있습니다.
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
