@@ -154,3 +154,70 @@ Next.js가 알아서 파일 이름을 Routing합니다. React router같은 것�
 JSX도 잘 동작합니다. JSX를 사용하기 위해 .jsx로 바꿀 필요도 없고, import React를 할 필요도 없습니다.
 
 다만, useEffect(), useState()를 사용해야 한다면 import React해야 합니다.
+
+## 6.3 Routing
+
+Navigation Component을 알아봅시다. components/NavBar.js를 만듭시다.
+
+주의할 점은 `<a>`를 사용해서 href로 이동하면 안됩니다.
+
+`<a>`로 이동하면 모든 페이지가 reloading되는데, 그걸 원하지 않습니다. <a>로는 client side navigation을 할 수 없습니다.
+
+`<Link>`가 필요합니다. `<Link>`와 `<a>`를 같이 사용해야 합니다.
+
+Next.js v13에서는 `<a>`를 사용하지 않아도 됩니다.
+
+Router 정보는 `next/router`의 `useRouter()`에서 제공합니다.
+
+- pages/index.js
+
+```jsx
+import NavBar from ". ./components/NavBar";
+
+export default function Home() {
+  return (
+    <div>
+      <NavBar />
+      <h1>Hello</h1>
+    </div>
+  );
+}
+```
+
+- pages/about.js
+
+```jsx
+import NavBar from "../components/NavBar";
+
+export default function Potato() {
+  return (
+    <div>
+      <NavBar />
+      <h1>About</h1>
+    </div>
+  );
+}
+```
+
+- components/NavBar.js
+
+```jsx
+import Link from "next/link";
+import { useRouter } from "next/router";
+
+export default function NavBar() {
+  const router = useRouter();
+  return (
+    <nav>
+      <Link href="/">
+        <a style={{ color: router.pathname === "/" ? "red" : "blue" }}>Home</a>
+      </Link>
+      <Link href="/about">
+        <a style={{ color: router.pathname === "/about" ? "red" : "blue" }}>
+          About
+        </a>
+      </Link>
+    </nav>
+  );
+}
+```
