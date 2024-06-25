@@ -138,3 +138,19 @@ React.js를 사용할 때는 폴더 구조를 여러분이 정하면 됩니다. 
 Framework에서는 추상화되어있습니다.
 
 about.js를 만들면 자동으로 URL /about Routing이 됩니다.
+
+## 6.1 Pages
+
+Next.js가 알아서 파일 이름을 Routing합니다. React router같은 것은 필요 없습니다.
+
+파일의 이름이 중요합니다. 컴포넌트의 이름은 중요하지 않습니다.
+
+중요한 점은 export default입니다.
+
+404 Not found도 제공합니다.
+
+앱의 home은 index입니다.
+
+JSX도 잘 동작합니다. JSX를 사용하기 위해 .jsx로 바꿀 필요도 없고, import React를 할 필요도 없습니다.
+
+다만, useEffect(), useState()를 사용해야 한다면 import React해야 합니다.
