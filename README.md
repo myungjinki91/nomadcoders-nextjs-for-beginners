@@ -274,3 +274,57 @@ export default function NavBar() {
 ```
 
 근데 은근 이거 불편합니다.
+
+## 6.5 Styles JSX
+
+vercel에서 만든 styled-jsx를 사용해봅시다. NextJS에서 사용하는 방법입니다.
+
+```jsx
+import NavBar from "../components/NavBar";
+
+export default function Home() {
+  return (
+    <div>
+      <NavBar />
+      <h1 className="active">Hello</h1>
+      <style jsx>{`
+        a {
+          color: white;
+        }
+      `}</style>
+    </div>
+  );
+}
+```
+
+```jsx
+import Link from "next/link";
+import { useRouter } from "next/router";
+
+export default function NavBar() {
+  const router = useRouter();
+  return (
+    <nav>
+      <Link href="/">
+        <a className={router.pathname === "/" ? "active" : ""}>Home</a>
+      </Link>
+      <Link href="/about">
+        <a className={router.pathname === "/about" ? "active" : ""}>About</a>
+      </Link>
+      <style jsx>{`
+        nav {
+          background-color: tomato;
+        }
+        a {
+          text-decoration: none;
+        }
+        .active {
+          color: yellow;
+        }
+      `}</style>
+    </nav>
+  );
+}
+```
+
+장점은 className을 짓는데 머리 쓸 필요가 없다는 겁니다. 그리고 해당 Component에만 적용됩니다.
