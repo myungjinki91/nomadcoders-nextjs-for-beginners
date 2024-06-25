@@ -132,6 +132,18 @@ React가 로드되면 anchor는 React component가 됩니다.
 
 hydration은 단순한 HTML을 React component로 변환하는 것.
 
+## 2.5 'use client'
+
+모든 Component는 Server side rendering 합니다.
+
+모든 Component는 hydration하지 않음.`”use client”`가 선언된 Client만 hydrated 됩니다.
+
+backend render fronted hydrated 합니다.
+
+`“use client”`가 선언되지 않으면 모두 Server Component입니다. 이렇게 하는 이유는 use client가 선언되지 않은 컴포넌트는 JavaScript를 적용할 필요 없기 때문에 JavaScript를 로드하지 않습니다.
+
+Server Side Rendering은 Data Fetching에 엄청난 강점을 가집니다.
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
