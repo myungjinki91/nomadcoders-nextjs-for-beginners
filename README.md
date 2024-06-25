@@ -122,6 +122,16 @@ Next.js로 만든 프로그램은 HTML에 내용이 있습니다.
 
 모든~~~ component는 서버에서 렌더링 됩니다. “use client”라고 선언한 컴포넌트도 먼저 백엔드에서 렌더링됩니다.
 
+## 2.4 Hydration
+
+Hard navigation
+
+React가 hydrated되었다.
+
+React가 로드되면 anchor는 React component가 됩니다.
+
+hydration은 단순한 HTML을 React component로 변환하는 것.
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
