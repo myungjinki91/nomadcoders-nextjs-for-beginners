@@ -221,3 +221,56 @@ export default function NavBar() {
   );
 }
 ```
+
+## 6.4 CSS Modules
+
+CSS Module을 사용해봅시다.
+
+className을 사용하면 됩니다.
+
+className을 사용하면 HTML으로 변환됐을 때 class 이름이 암호화됩니다.
+
+```css
+.link {
+  text-decoration: none;
+}
+
+.active {
+  color: tomato;
+}
+```
+
+```jsx
+import Link from "next/link";
+import { useRouter } from "next/router";
+import styles from "./NavBar.module.css";
+
+export default function NavBar() {
+  const router = useRouter();
+  return (
+    <nav>
+      <Link href="/">
+        <a
+          className={`${styles.link} ${
+            router.pathname === "/" ? styles.active : ""
+          }`}
+        >
+          Home
+        </a>
+      </Link>
+      <Link href="/about">
+        <a
+          className={[
+            styles.link,
+            router.pathname === "/about" ? styles.active : "",
+          ].join(" ")}
+        >
+          About
+        </a>
+      </Link>
+    </nav>
+  );
+}
+```
+
+근데 은근 이거 불편합니다.
