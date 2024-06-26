@@ -299,6 +299,14 @@ React.js에서 제공하는 기능인 `<Suspense>`를 사용하면 요청을 모
 2. 1번, 2번 동시 요청 → 모두 요청 끝 → 렌더링
 3. 이제는 1번, 2번 동시 요청 → 각자 요청 끝나면 렌더링
 
+## 3.6 Recap
+
+## 3.7 Error Handling
+
+error.tsx파일을 만들기만 하면 됩니다. 주의사항은 page.tsx가 있는 곳에만 적용된다는 점!
+
+## 3.8 Conclusions
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
