@@ -219,6 +219,76 @@ Route group을 사용하려면 디렉토리 이름을 ()로 묶어줍니다.
 
 ## 3.3 Loading Components
 
+## 3.4 Parallel Requests
+
+Promise.all()을 사용하면 fetching을 동시에 병렬적으로 할 수 있습니다.
+
+- app/(home)/page.tsx
+
+```tsx
+import Link from "next/link";
+
+export const metadata = {
+  title: "Home",
+};
+
+export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
+
+async function getMovies() {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  const response = await fetch(API_URL);
+  const json = await response.json();
+  return json;
+}
+
+export default async function HomePage() {
+  const movies = await getMovies();
+  return (
+    <div>
+      {movies.map((movie) => (
+        <li key={movie.id}>
+          <Link href={`movies/${movie.id}`}>{movie.title}</Link>
+        </li>
+      ))}
+    </div>
+  );
+}
+```
+
+- app/(movies)/movies/[id]/pages.tsx
+
+```tsx
+import { API_URL } from "../../../(home)/page";
+
+async function getMovie(id: string) {
+  console.log(`Fetching movies: ${Date.now()}`);
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+  const response = await fetch(API_URL + `/${id}`);
+  return await response.json();
+}
+
+async function getVideos(id: string) {
+  console.log(`Fetching videos: ${Date.now()}`);
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+  const response = await fetch(API_URL + `/${id}/videos`);
+  return await response.json();
+}
+
+export default async function MovieDetail({
+  params: { id },
+}: {
+  params: {
+    id: string;
+  };
+}) {
+  console.log("============");
+  console.log("start fetching");
+  const [movie, video] = await Promise.all([getMovie(id), getVideos(id)]);
+  console.log("end fetching");
+  return <h1>{movie.title}</h1>;
+}
+```
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
