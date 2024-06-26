@@ -862,3 +862,21 @@ export async function getServerSideProps() {
 ```
 
 ## 7.4 Recap
+
+## 7.5 Dynamic Routes
+
+파일 이름을 [ variables ].js로 설정하면 Dynamic Route가 됩니다.
+
+변수는 useRouter() Hook으로 받아올 수 있습니다.
+
+- pages/movies/[id].js
+
+```jsx
+import { useRouter } from "next/router";
+
+export default function Detail() {
+  const router = useRouter();
+  console.log(router);
+  return "detail";
+}
+```
