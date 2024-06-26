@@ -289,6 +289,16 @@ export default async function MovieDetail({
 }
 ```
 
+## 3.5 Suspense
+
+React.js에서 제공하는 기능인 `<Suspense>`를 사용하면 요청을 모두 기다리지 않아도 됩니다.
+
+지금까지 요청은 진화해 왔습니다.
+
+1. 1번 요청 → 1번 요청 끝 → 2번 요청 → 2번 요청 끝 → 렌더링
+2. 1번, 2번 동시 요청 → 모두 요청 끝 → 렌더링
+3. 이제는 1번, 2번 동시 요청 → 각자 요청 끝나면 렌더링
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
