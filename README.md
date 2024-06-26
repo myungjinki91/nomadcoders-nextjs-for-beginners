@@ -829,3 +829,7 @@ export default function NavBar() {
 ## 7.0 Patterns
 
 사람들이 엄청 자주 사용하는 패턴을 봅시다. layout pattern입니다!
+
+## 7.1 Fetching Data
+
+ReactJS에서 하듯이, useEffect()를 사용한 fetch를 해봅시다.
