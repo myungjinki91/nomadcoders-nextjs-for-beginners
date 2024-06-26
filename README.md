@@ -361,6 +361,37 @@ export default function Navigation() {
 }
 ```
 
+## 4.2 Movie Styles
+
+CSS는 복붙하시고, 새로 알아볼 것은 useRoute()입니다. 이미지를 클릭했을 때에도 이동하도록 변경하고 싶어요.
+
+```tsx
+"use client";
+
+import Link from "next/link";
+import styles from "../styles/movie.module.css";
+import { useRouter } from "next/navigation";
+
+interface IMovieProps {
+  title: string;
+  id: string;
+  poster_path: string;
+}
+
+export default function Movie({ title, id, poster_path }: IMovieProps) {
+  const router = useRouter();
+  const onClick = () => {
+    router.push(`/movies/${id}`);
+  };
+  return (
+    <div className={styles.movie}>
+      <img src={poster_path} alt={title} onClick={onClick} />
+      <Link href={`/movies/${id}`}>{title}</Link>
+    </div>
+  );
+}
+```
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
