@@ -833,3 +833,11 @@ export default function NavBar() {
 ## 7.1 Fetching Data
 
 ReactJS에서 하듯이, useEffect()를 사용한 fetch를 해봅시다.
+
+## 7.2 Redirect and Rewrite
+
+API를 숨겨봅시다.
+
+redirect를 하면 유저의 URL이 변경되고 Rewrite하면 URL이 변경되지 않습니다.
+
+.env도 사용합니다.
