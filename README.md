@@ -209,6 +209,14 @@ Route group을 사용하려면 디렉토리 이름을 ()로 묶어줍니다.
 
 [ ] 로 된 폴더를 만들면 Dynamic Route를 할 수 있습니다. 그리고 props로 route정보를 받아올 수 있습니다.
 
+# 3 [🔥 2024 UPDATE 🔥] DATA FETCHING
+
+## 3.0 Introduction
+
+## 3.1 Client Side
+
+## 3.2 Server Side
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
