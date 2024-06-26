@@ -440,6 +440,51 @@ export default async function MovieDetailPage({ params: { id } }: IParams) {
 }
 ```
 
+## 4.5 Deployment
+
+Next.js의 page.tsx에서는 아무거나 export할 수 없습니다. URL은 constants.ts로 옮겨줍시다.
+
+package.json을 수정해줍시다.
+
+```json
+{
+  "name": "nomadcoders-nextjs-for-beginners",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "next": "^14.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.8",
+    "@types/react": "18.3.3",
+    "typescript": "5.5.2"
+  }
+}
+```
+
+그리고 prefetch… component가 렌더링되면 해당되는 children을 미리 fetch합니다. 화면에 rendering되는 순간 미리 fetch하기 때문에 유저는 기다릴 필요가 없게 됩니다.
+
+prefetch는 production에서 동작합니다.
+
+Keep in mind: `prefetch` is `true` by default. 💖
+
+```tsx
+<Link prefetch href={`/movies/${id}`}>
+  {title}
+</Link>
+```
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
