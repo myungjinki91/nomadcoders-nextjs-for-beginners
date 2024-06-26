@@ -892,3 +892,7 @@ export default function Detail() {
 Catch All URL!!!
 
 파일 이름이 […id].js 라면 싹 다 받아옵니다!
+
+## 7.8 404 Pages
+
+404.js를 만들면됩니다. 쉽죠?
