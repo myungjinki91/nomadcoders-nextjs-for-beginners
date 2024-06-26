@@ -217,6 +217,8 @@ Route group을 사용하려면 디렉토리 이름을 ()로 묶어줍니다.
 
 ## 3.2 Server Side
 
+## 3.3 Loading Components
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
