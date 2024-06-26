@@ -841,3 +841,22 @@ API를 숨겨봅시다.
 redirect를 하면 유저의 URL이 변경되고 Rewrite하면 URL이 변경되지 않습니다.
 
 .env도 사용합니다.
+
+## 7.3 Server Side Rendering
+
+이름이 중요합니다! 이 코드는 서버에서 동작합니다! 이제 서버에서 API를 호출할 수 있습니다!
+
+```
+
+export async function getServerSideProps() {
+  const { results } = await (
+    await fetch(`http://localhost:3000/api/movies`)
+  ).json();
+  return {
+    props: {
+      results,
+    },
+  };
+}
+
+```
