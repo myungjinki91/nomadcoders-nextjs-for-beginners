@@ -307,6 +307,60 @@ error.tsx파일을 만들기만 하면 됩니다. 주의사항은 page.tsx가 �
 
 ## 3.8 Conclusions
 
+# 4 [🔥 2024 UPDATE 🔥] DEPLOYMENT
+
+## 4.0 Introduction
+
+## 4.1 CSS Modules
+
+Next.js에서는 CSS Module을 바로 사용할 수 있습니다. 물론 Styled Components, Tailwind CSS, chakra등 쓰고 싶은 것 모두 사용할 수 있습니다.
+
+Global CSS부터 해봅시다. styles/global.css에 기본적인 CSS를 설정하고 app/layout.tsx에 import합니다.
+
+가장 기본적인 CSS 적용방법이죠? 그 다음 CSS Module을 사용해봅시다.
+
+- ../styles/navigation.module.css
+
+```css
+.nav {
+  background-color: red;
+  padding: 50px 100px;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.list {
+  display: flex;
+}
+```
+
+```tsx
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import styles from "../styles/navigation.module.css";
+
+export default function Navigation() {
+  const path = usePathname();
+  return (
+    <nav className={styles.nav}>
+      <ul className={styles.list}>
+        <li>
+          <Link href="/">Home</Link> {path === "/" ? "🔥" : ""}
+        </li>
+        <li>
+          <Link href="/about-us">About Us</Link>{" "}
+          {path === "/about-us" ? "🔥" : ""}
+        </li>
+      </ul>
+    </nav>
+  );
+}
+```
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
