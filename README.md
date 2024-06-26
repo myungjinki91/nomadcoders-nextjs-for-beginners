@@ -30,6 +30,8 @@ React.js를 사용하기 위해선 React를 import해야 합니다. Next.js를 �
 
 ## 1.5 Old vs New Version
 
+이전까지 Page Router를 사용했다면 이제는 App router를 사용합니다. Data fetching이 엄청나게 바뀌었지만, 여전히 Page Router를 사용할 수 있습니다.
+
 ## 1.6 Project Setup
 
 자동으로 딸깍
