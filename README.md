@@ -396,6 +396,50 @@ export default function Movie({ title, id, poster_path }: IMovieProps) {
 
 CSS 적용
 
+## 4.4 Dynamic Metadata
+
+코드 챌린지!
+
+- /movies/:id/credits
+- /movies/:id/providers
+- /movies/:id/similar
+
+Metadata도 동적으로 바꿀 수 있습니다.
+
+또한 메타데이터에서 API를 요청해도 성능에 문제가 없습니다. 어짜피 Next.js 14에서는 캐싱되거든요.
+
+```tsx
+import { Suspense } from "react";
+import MovieInfo, { getMovie } from "../../../../components/movie-info";
+import MovieVideos from "../../../../components/movie-videos";
+
+interface IParams {
+  params: {
+    id: string;
+  };
+}
+
+export async function generateMetadata({ params: { id } }: IParams) {
+  const movie = await getMovie(id);
+  return {
+    title: movie.title,
+  };
+}
+
+export default async function MovieDetailPage({ params: { id } }: IParams) {
+  return (
+    <div>
+      <Suspense fallback={<h1>Loading movie info</h1>}>
+        <MovieInfo id={id} />
+      </Suspense>
+      <Suspense fallback={<h1>Loading movie video</h1>}>
+        <MovieVideos id={id} />
+      </Suspense>
+    </div>
+  );
+}
+```
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
