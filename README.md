@@ -880,3 +880,9 @@ export default function Detail() {
   return "detail";
 }
 ```
+
+## 7.6 Movie Detail
+
+사진을 클릭해도 이동하고 싶다면 router = useRouter() router.push()를 사용합시다!
+
+`<Link href=”” as=””>` href가 query로 못생겨진다면 as로 바꿀 수 있습니다.
