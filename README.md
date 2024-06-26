@@ -860,3 +860,5 @@ export async function getServerSideProps() {
 }
 
 ```
+
+## 7.4 Recap
