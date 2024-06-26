@@ -886,3 +886,9 @@ export default function Detail() {
 사진을 클릭해도 이동하고 싶다면 router = useRouter() router.push()를 사용합시다!
 
 `<Link href=”” as=””>` href가 query로 못생겨진다면 as로 바꿀 수 있습니다.
+
+## 7.7 Catch All
+
+Catch All URL!!!
+
+파일 이름이 […id].js 라면 싹 다 받아옵니다!
