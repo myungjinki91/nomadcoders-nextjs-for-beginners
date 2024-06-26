@@ -392,6 +392,10 @@ export default function Movie({ title, id, poster_path }: IMovieProps) {
 }
 ```
 
+## 4.3 Movie Trailers
+
+CSS 적용
+
 # 5 [NEXT 12] INTRODUCTION
 
 ## 5.1 Welcome
